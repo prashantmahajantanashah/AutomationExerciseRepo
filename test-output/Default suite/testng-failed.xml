@@ -6,6 +6,7 @@
       <class name="com.myapp.tests.RegisterUserTest">
         <methods>
           <include name="registerUser"/>
+          <include name="generateReport"/>
           <include name="setup"/>
           <include name="presetup"/>
           <include name="tearDown"/>
