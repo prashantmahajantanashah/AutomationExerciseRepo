@@ -1,27 +1,27 @@
 package com.myapp.tests;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.io.IOException;
 import java.util.Properties;
-
-import org.openqa.selenium.By;
 import org.testng.Assert;
-import org.testng.annotations.Test;
-
 import com.github.javafaker.Faker;
+import com.myapp.utils.CommonAssertions;
 import com.myapp.utils.TestProperties;
 public class RegisterUserTest extends BaseTest{
+	
 	
 	@Test
 	public void registerUser() throws InterruptedException, IOException {
 		
 		//validate homePage is displayed
-		Assert.assertTrue(hp.isHomePageDisplayed(), "HomePage is not displayed");
+		CommonAssertions.verifyTrue(hp.isHomePageDisplayed());
 		
 		//click signup btn
 		hp.clickSignUpBtn();
 		
 		//validate homepage is loaded successfully
-		Assert.assertTrue(sp.isHomePageLoaded(), "New User SignUp not visible");
+		CommonAssertions.verifyTrue(sp.isHomePageLoaded());
 		
 		//Create faker object
 		Faker faker = new Faker();
@@ -35,28 +35,33 @@ public class RegisterUserTest extends BaseTest{
 		String address=faker.address().toString();
 		String state=faker.address().state().toString();
 		String city=faker.address().city().toString();
+		String country=prop.getProperty("country");
 		String zipcode=faker.address().zipCode().toString();
 		String mobNum=faker.number().toString();
-		
-		
+		System.out.println(email);
+		System.out.println(password);
 		//Enter name and email and click submit
 		sp.enterNameAndEmailAndSubmit(FirstName, email);
 		
 		//Validate acc label is displayed
-		Assert.assertTrue(sp.isAccInfoLabel(), "Enter Account Information is not visible");
+		CommonAssertions.verifyTrue(sp.isAccInfoLabel());
 		
-		sp.signUpFillDetails(password, FirstName, lastName, company, address, state, city, zipcode, mobNum);
+		sp.signUpFillDetails(password, FirstName, lastName, company, address, state, city, country, zipcode, mobNum);
 		
-		Assert.assertTrue(sp.isAccountCreated());
+		CommonAssertions.verifyTrue(sp.isAccountCreated());
 		
 		sp.clickContinue();
 		
 		String loggedInUser=sp.getUserLoggedInValue();
 		Properties prop=TestProperties.getProperties();
-		Assert.assertEquals(loggedInUser, prop.getProperty("loggedInMsg")+FirstName);
+		
+		CommonAssertions.verfiyEqual(loggedInUser, prop.getProperty("loggedInMsg")+FirstName , "Mismatch");
 		sp.clickDeleteBtn();
-		Assert.assertTrue(sp.isAccountDeletedVissible());
+		CommonAssertions.verifyTrue(sp.isAccountDeletedVissible());
 		sp.clickContinue();
+		
+		
+		
 	}
 
 }

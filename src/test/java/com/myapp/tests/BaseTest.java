@@ -1,18 +1,16 @@
 package com.myapp.tests;
 
+import org.testng.annotations.AfterMethod;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
-
 import com.myapp.pageobjects.HomePage;
 import com.myapp.pageobjects.SignUpPage;
 import com.myapp.utils.TestProperties;
@@ -65,9 +63,11 @@ public class BaseTest {
 		prop=TestProperties.getProperties();
 	}
 	
+	
+	
 	@AfterMethod
 	public void tearDown() {
-//		driver.quit();
+		driver.quit();
 	}
 
 }

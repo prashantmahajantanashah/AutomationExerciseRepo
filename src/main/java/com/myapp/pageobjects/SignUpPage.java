@@ -100,6 +100,17 @@ public class SignUpPage extends BasePage {
 	@FindBy(xpath="//b[text()='Account Deleted!']")
 	private WebElement AccDeletedLabel;
 	
+	@FindBy(xpath="//*[text()='Login to your account']")
+	private WebElement loginAccLabel;
+	
+	@FindBy(xpath="//*[@data-qa='login-email']")
+	private WebElement loginEmailInput;
+	
+	@FindBy(xpath="//*[@data-qa='login-password']")
+	private WebElement passwordInput;
+	
+	@FindBy(xpath="//*[@data-qa='login-button']")
+	private WebElement loginBtn;
 	
 	
 	public boolean isHomePageLoaded() {
@@ -123,7 +134,7 @@ public class SignUpPage extends BasePage {
 	}
 	
 	public void signUpFillDetails(String password, String firstName, String lastName, String company, String address, 
-			String State, String city, String zipcode, String mobileNum) throws InterruptedException {
+			String State, String city, String country, String zipcode, String mobileNum) throws InterruptedException {
 		clickElement(MrRadioBtn);
 		enterText(fillPassword, password);
 		scroll(dateOfBirth);
@@ -136,7 +147,7 @@ public class SignUpPage extends BasePage {
 		scroll(addressLabel);
 		shortWait();
 		enterText(addressField, address);
-		enterText(selectCountry, "Canada");
+		enterText(selectCountry, country);
 		enterText(selectState, State);
 		enterText(selectCity, city);
 		enterText(selectZipcode, zipcode);
@@ -166,6 +177,17 @@ public class SignUpPage extends BasePage {
 	
 	public boolean isAccountDeletedVissible() {
 		return isElementDisplayed(AccDeletedLabel);
+	}
+	
+	public void enterCredsAndLogin(String loginEmailId, String loginPassword) throws InterruptedException {
+		waitUntilDisplayed(loginAccLabel);
+		enterText(loginEmailInput, loginEmailId);
+		enterText(passwordInput, loginPassword);
+		clickElement(loginBtn);
+	}
+	
+	public boolean isLoginAccountLabelVisible() {
+		return loginAccLabel.isDisplayed();
 	}
 	
 //	public void clickElementMatchingTheLinkText(String text) throws InterruptedException {
