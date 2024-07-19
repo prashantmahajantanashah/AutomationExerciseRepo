@@ -11,6 +11,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
+
+import com.myapp.Context.DriverManager;
 import com.myapp.pageobjects.HomePage;
 import com.myapp.pageobjects.SignUpPage;
 import com.myapp.utils.TestProperties;
@@ -22,7 +24,7 @@ public class BaseTest {
 	
 	@BeforeMethod
 	@Parameters({"browserName"})
-	public void setup(@Optional String browserName) {
+	public void setup(@Optional String browserName) throws Exception {
 		
 		browserName=prop.getProperty("browserName");
 		
@@ -39,11 +41,12 @@ public class BaseTest {
 		System.out.println("Executing in "+ env);
 		
 		initPages();
-		
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		driver.manage().deleteAllCookies();
-		driver.manage().window().maximize();
-		driver.get(URL);
+		DriverManager.setDriver(driver);
+		DriverManager.getDriver();
+		DriverManager.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		DriverManager.getDriver().manage().deleteAllCookies();
+		DriverManager.getDriver().manage().window().maximize();
+		DriverManager.getDriver().get(URL);
 		
 		
 	}

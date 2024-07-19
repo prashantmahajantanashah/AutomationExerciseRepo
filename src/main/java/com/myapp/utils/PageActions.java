@@ -1,9 +1,12 @@
 package com.myapp.utils;
 
+import java.io.File;
 import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.devtools.idealized.Javascript;
@@ -12,6 +15,8 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.myapp.Context.Constants;
 
 public class PageActions {
 	WebDriver driver;
@@ -83,6 +88,17 @@ public class PageActions {
 	
 	public String getElementText(WebElement ele) {
 		return ele.getText();
+	}
+	
+	public void getScreenshot() {
+		
+		TakesScreenshot screenshot=(TakesScreenshot)driver;
+		File src=screenshot.getScreenshotAs(OutputType.FILE);
+		
+		File desc= new File(Constants.workingDirectory + "/Screenshots/screenshot" +  UniqueGenrator.getUniqueSting() +".png");
+		
+		
+		
 	}
 
 }

@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="2" passed="1" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-07T18:20:26 IST" name="Suite" finished-at="2024-07-07T18:20:41 IST" duration-ms="15044">
+  <suite started-at="2024-07-08T17:43:14 IST" name="Suite" finished-at="2024-07-08T17:43:29 IST" duration-ms="15028">
     <groups>
     </groups>
-    <test started-at="2024-07-07T18:20:26 IST" name="RegisterationTest" finished-at="2024-07-07T18:20:27 IST" duration-ms="103">
+    <test started-at="2024-07-08T17:43:14 IST" name="RegisterationTest" finished-at="2024-07-08T17:43:14 IST" duration-ms="84">
       <class name="com.myapp.tests.RegisterUserTest">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.myapp.tests.RegisterUserTest@4b29d1d2]" started-at="2024-07-07T18:20:26 IST" name="setup" finished-at="2024-07-07T18:20:26 IST" duration-ms="8" status="FAIL">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.myapp.tests.RegisterUserTest@4b29d1d2]" started-at="2024-07-08T17:43:14 IST" name="setup" finished-at="2024-07-08T17:43:14 IST" duration-ms="6" status="FAIL">
           <params>
             <param index="0">
               <value is-null="true"/>
@@ -19,7 +19,7 @@
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException: Cannot invoke "java.util.Properties.getProperty(String)" because "this.prop" is null
-at com.myapp.tests.BaseTest.setup(BaseTest.java:27)
+at com.myapp.tests.BaseTest.setup(BaseTest.java:29)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 at java.base/java.lang.reflect.Method.invoke(Method.java:577)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -50,14 +50,14 @@ at java.base/java.lang.Thread.run(Thread.java:833)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="registerUser()[pri:0, instance:com.myapp.tests.RegisterUserTest@4b29d1d2]" started-at="2024-07-07T18:20:26 IST" name="registerUser" finished-at="2024-07-07T18:20:26 IST" duration-ms="1" status="SKIP">
+        <test-method signature="registerUser()[pri:0, instance:com.myapp.tests.RegisterUserTest@4b29d1d2]" started-at="2024-07-08T17:43:14 IST" name="registerUser" finished-at="2024-07-08T17:43:14 IST" duration-ms="0" status="SKIP">
           <exception class="java.lang.NullPointerException">
             <message>
               <![CDATA[Cannot invoke "java.util.Properties.getProperty(String)" because "this.prop" is null]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException: Cannot invoke "java.util.Properties.getProperty(String)" because "this.prop" is null
-at com.myapp.tests.BaseTest.setup(BaseTest.java:27)
+at com.myapp.tests.BaseTest.setup(BaseTest.java:29)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 at java.base/java.lang.reflect.Method.invoke(Method.java:577)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -88,19 +88,19 @@ at java.base/java.lang.Thread.run(Thread.java:833)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- registerUser -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.myapp.tests.RegisterUserTest@4b29d1d2]" started-at="2024-07-07T18:20:27 IST" name="tearDown" finished-at="2024-07-07T18:20:27 IST" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.myapp.tests.RegisterUserTest@4b29d1d2]" started-at="2024-07-08T17:43:14 IST" name="tearDown" finished-at="2024-07-08T17:43:14 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.myapp.tests.RegisterUserTest -->
     </test> <!-- RegisterationTest -->
-    <test started-at="2024-07-07T18:20:26 IST" name="LoginTest" finished-at="2024-07-07T18:20:41 IST" duration-ms="15044">
+    <test started-at="2024-07-08T17:43:14 IST" name="LoginTest" finished-at="2024-07-08T17:43:29 IST" duration-ms="15028">
       <class name="com.myapp.tests.LoginTest">
-        <test-method is-config="true" signature="presetup()[pri:0, instance:com.myapp.tests.LoginTest@7c37508a]" started-at="2024-07-07T18:20:26 IST" name="presetup" finished-at="2024-07-07T18:20:26 IST" duration-ms="18" status="PASS">
+        <test-method is-config="true" signature="presetup()[pri:0, instance:com.myapp.tests.LoginTest@7c37508a]" started-at="2024-07-08T17:43:14 IST" name="presetup" finished-at="2024-07-08T17:43:14 IST" duration-ms="19" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- presetup -->
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.myapp.tests.LoginTest@7c37508a]" started-at="2024-07-07T18:20:26 IST" name="setup" finished-at="2024-07-07T18:20:35 IST" duration-ms="8196" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.myapp.tests.LoginTest@7c37508a]" started-at="2024-07-08T17:43:14 IST" name="setup" finished-at="2024-07-08T17:43:24 IST" duration-ms="9533" status="PASS">
           <params>
             <param index="0">
               <value is-null="true"/>
@@ -109,11 +109,11 @@ at java.base/java.lang.Thread.run(Thread.java:833)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="testLogin()[pri:0, instance:com.myapp.tests.LoginTest@7c37508a]" started-at="2024-07-07T18:20:35 IST" name="testLogin" finished-at="2024-07-07T18:20:41 IST" duration-ms="6458" status="PASS">
+        <test-method signature="testLogin()[pri:0, instance:com.myapp.tests.LoginTest@7c37508a]" started-at="2024-07-08T17:43:24 IST" name="testLogin" finished-at="2024-07-08T17:43:29 IST" duration-ms="5153" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLogin -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.myapp.tests.LoginTest@7c37508a]" started-at="2024-07-07T18:20:41 IST" name="tearDown" finished-at="2024-07-07T18:20:41 IST" duration-ms="341" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.myapp.tests.LoginTest@7c37508a]" started-at="2024-07-08T17:43:29 IST" name="tearDown" finished-at="2024-07-08T17:43:29 IST" duration-ms="298" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
