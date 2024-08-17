@@ -16,4 +16,16 @@
       </class> <!-- com.myapp.tests.RegisterUserTest -->
     </classes>
   </test> <!-- RegisterationTest(failed) -->
+  <test thread-count="2" parallel="tests" name="LoginTest(failed)">
+    <classes>
+      <class name="com.myapp.tests.LoginTest">
+        <methods>
+          <include name="testLogin"/>
+          <include name="setup"/>
+          <include name="presetup"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.myapp.tests.LoginTest -->
+    </classes>
+  </test> <!-- LoginTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -11,6 +11,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
+
+import com.myapp.pageobjects.ContactUsPage;
 import com.myapp.pageobjects.HomePage;
 import com.myapp.pageobjects.SignUpPage;
 import com.myapp.utils.TestProperties;
@@ -50,11 +52,13 @@ public class BaseTest {
 	
 	HomePage hp;
 	SignUpPage sp;
+	ContactUsPage cp;
 	
 	
 	public void initPages() {
 		hp=new HomePage(driver);
 		sp= new SignUpPage(driver);
+		cp= new ContactUsPage(driver);
 	}
 	
 	

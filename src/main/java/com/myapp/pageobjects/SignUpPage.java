@@ -112,6 +112,10 @@ public class SignUpPage extends BasePage {
 	@FindBy(xpath="//*[@data-qa='login-button']")
 	private WebElement loginBtn;
 	
+	@FindBy(xpath="//p[contains(text(),'Your email or password is incorrect!')]")
+	private WebElement loginFailureMsg;
+	
+	
 	
 	public boolean isHomePageLoaded() {
 		return isElementDisplayed(SignUpLabel);
@@ -188,6 +192,10 @@ public class SignUpPage extends BasePage {
 	
 	public boolean isLoginAccountLabelVisible() {
 		return loginAccLabel.isDisplayed();
+	}
+	
+	public boolean isLoginErroVisible() {
+		return loginFailureMsg.isDisplayed();
 	}
 	
 //	public void clickElementMatchingTheLinkText(String text) throws InterruptedException {

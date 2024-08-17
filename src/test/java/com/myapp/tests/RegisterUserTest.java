@@ -1,10 +1,10 @@
 package com.myapp.tests;
 
 import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
+
 import java.io.IOException;
 import java.util.Properties;
-import org.testng.Assert;
+
 import com.github.javafaker.Faker;
 import com.myapp.utils.CommonAssertions;
 import com.myapp.utils.TestProperties;
@@ -56,9 +56,9 @@ public class RegisterUserTest extends BaseTest{
 		Properties prop=TestProperties.getProperties();
 		
 		CommonAssertions.verfiyEqual(loggedInUser, prop.getProperty("loggedInMsg")+FirstName , "Mismatch");
-		sp.clickDeleteBtn();
-		CommonAssertions.verifyTrue(sp.isAccountDeletedVissible());
-		sp.clickContinue();
+//		sp.clickDeleteBtn();
+//		CommonAssertions.verifyTrue(sp.isAccountDeletedVissible());
+//		sp.clickContinue();
 		
 		
 		

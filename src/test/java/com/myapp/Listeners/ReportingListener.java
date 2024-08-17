@@ -14,30 +14,30 @@ public class ReportingListener implements ITestListener{
 	ExtentTest test;
 	ThreadLocal<ExtentTest> extentTest= new ThreadLocal<ExtentTest>();
 
-	@Override
+	
 	public void onTestStart(ITestResult result) {
 		test=extent.createTest(result.getMethod().getMethodName());
 		extentTest.set(test);
 	}
 
-	@Override
+	
 	public void onTestSuccess(ITestResult result) {
 		extentTest.get().log(Status.PASS, "test passed");
 		
 	}
 
-	@Override
+	
 	public void onTestFailure(ITestResult result) {
 		extentTest.get().log(Status.FAIL, result.getThrowable());
 		
 	}
 
-	@Override
+	
 	public void onTestSkipped(ITestResult result) {
 		extentTest.get().log(Status.SKIP, "test skipped");
 	}
 
-	@Override
+	
 	public void onFinish(ITestContext context) {
 		extent.flush();
 	}
